@@ -10,6 +10,19 @@
     --base-size: 16px;
 }
 
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* Main styles */
 
 body {
@@ -20,9 +33,108 @@ body {
     color: var(--main-text-color);
 }
 
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    padding: 60px 0;
+    background-color: var( --dark-bg-color);
+    width: 100vw;
+    position: relative;
+    left: 49%;
+    margin-left: -50vw;
+}
+
+address {
+    margin-top: 20px;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navigation {
+    height: 80px;
+    padding: 25px 0;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts {
+    display: inline-flex;
+    margin-left: 280px;
+}
+
+.contacts .link {
+    color: var(--secondary-color);
+}
+
+.contacts .link:not(:last-child) {
+    margin-right: 50px;
+}
+
+.menu-nav {
+    width: 295px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.item .link {
+    list-style: none;
+    text-decoration: none;
+    display: block;
+}
+
+.flex-c {
+    justify-content: center;
+    align-items: center;
+}
+
+.hero {
+    width: 100vw;
+    position: relative;
+    left: 49%;
+    margin-left: -50vw;
+    text-align: center;
+    height: 600px;
+    background-color: var(--dark-bg-color);
+    flex-direction: column;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    padding: 95px 0;
+}
+
+.features .list {
+    width: 270px;
+}
+
+.features p {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 3%;
+    color: var(--secondary-color);
+}
+
+.image-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
 .link {
     text-decoration: none;
     color: inherit;
+    font-weight: 500;
 }
 
 .link:hover, .link:focus {
@@ -31,6 +143,8 @@ body {
 
 .list {
     list-style: none;
+    padding-left: 0;
+    margin: 0;
 }
 
 .button {
@@ -42,11 +156,15 @@ body {
     background-color: var(--main-bg-color);
     border: none;
     cursor: pointer;
-}
-
-.button:hover {
+    border-radius: 4px;
+    padding: 10px 32px;
     background-color: #2196f3;
     color: var(--main-bg-color);
+}
+
+.button:active {
+    outline: none;
+    transform: translateY(2px);
 }
 
 .button:focus {
@@ -70,12 +188,16 @@ body {
 }
 
 .page-title {
-    font-weight: 900;
     font-size: 44px;
+    font-weight: 900;
     line-height: 1.36;
-    text-align: center;
+    color: var(--main-bg-color);
+    display: block;
+    width: 700px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    margin-bottom: 30px;
+    margin: 0 auto 30px;
 }
 
 .page-title-item {
@@ -84,6 +206,7 @@ body {
     line-height: 1.142;
     text-transform: uppercase;
     color: var( --main-text-color);
+    margin-bottom: 10px;
 }
 
 .section-title {
@@ -92,23 +215,38 @@ body {
     line-height: 1.166;
     text-align: center;
     color: var( --main-text-color);
+    margin-bottom: 50px;
+}
+
+.works {
+    padding-bottom: 95px;
 }
 
 .page-title-description {
-    font-family: Roboto;
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
     color: var( --secondary-color);
 }
 
-.team {
-    font-weight: 500;
+.team-card {
     font-size: 16px;
-    line-height: 1.187;
+    font-weight: 500;
+    line-height: 1.2;
     text-align: center;
     color: var( --main-text-color);
+    width: 270px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+
+.person {
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 3%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 .team-item {
@@ -117,6 +255,28 @@ body {
     line-height: 19px;
     text-align: center;
     color: var(--secondary-color);
+    padding-bottom: 30px;
+}
+
+.our-team {
+    padding-bottom: 95px;
+}
+
+.contacts-item:not(:last-child) {
+    padding-bottom: 10px;
+    color: var(--main-bg-color);
+}
+
+.contacts-item .link {
+    color: var(--secondary-color);
+}
+
+.contacts-item .link:hover {
+    color: var(--accent-color);
+}
+
+footer .logo {
+    color: var(--main-bg-color);
 }
 
 .logo {
@@ -124,6 +284,7 @@ body {
     font-size: 26px;
     line-height: 1.192;
     color: var(--main-text-color);
+    margin-right: 90px;
 }
 
 .logo-highlight {
